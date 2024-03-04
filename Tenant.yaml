@@ -1,0 +1,423 @@
+openapi: 3.1.0
+x-stoplight:
+  id: jlweiyllybb0t
+info:
+  title: Tenant
+  version: '1.0'
+  summary: Delete Tenant
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  '/api/v1/tenant/{tenantId}':
+    parameters:
+      - schema:
+          type: string
+        name: tenantId
+        in: path
+        required: true
+    get:
+      summary: Get Tenant Info by Tenant ID
+      tags: []
+      responses:
+        '200':
+          description: User Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+              examples:
+                Get User Alice Smith:
+                  value:
+                    id: 142
+                    firstName: Alice
+                    lastName: Smith
+                    email: alice.smith@gmail.com
+                    dateOfBirth: '1997-10-31'
+                    emailVerified: true
+                    signUpDate: '2019-08-24'
+        '404':
+          description: User Not Found
+      operationId: get-tenant
+      description: Retrieve the information of the Tenant with the matching Tenant ID.
+      x-stoplight:
+        id: gq1k21wug0oea
+    get - copy 4:
+      summary: Get Tenant Info by Tenant ID
+      tags: []
+      responses:
+        '200':
+          description: User Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+              examples:
+                Get User Alice Smith:
+                  value:
+                    id: 142
+                    firstName: Alice
+                    lastName: Smith
+                    email: alice.smith@gmail.com
+                    dateOfBirth: '1997-10-31'
+                    emailVerified: true
+                    signUpDate: '2019-08-24'
+        '404':
+          description: User Not Found
+      operationId: get-users-userId
+      description: Retrieve the information of the Tenant with the matching Tenant ID.
+    get - copy 3:
+      summary: Get Tenant Info by Tenant ID
+      tags: []
+      responses:
+        '200':
+          description: User Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+              examples:
+                Get User Alice Smith:
+                  value:
+                    id: 142
+                    firstName: Alice
+                    lastName: Smith
+                    email: alice.smith@gmail.com
+                    dateOfBirth: '1997-10-31'
+                    emailVerified: true
+                    signUpDate: '2019-08-24'
+        '404':
+          description: User Not Found
+      operationId: get-users-userId
+      description: Retrieve the information of the Tenant with the matching Tenant ID.
+    get - copy 2:
+      summary: Get Tenant Info by Tenant ID
+      tags: []
+      responses:
+        '200':
+          description: User Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+              examples:
+                Get User Alice Smith:
+                  value:
+                    id: 142
+                    firstName: Alice
+                    lastName: Smith
+                    email: alice.smith@gmail.com
+                    dateOfBirth: '1997-10-31'
+                    emailVerified: true
+                    signUpDate: '2019-08-24'
+        '404':
+          description: User Not Found
+      operationId: get-users-userId
+      description: Retrieve the information of the Tenant with the matching Tenant ID.
+    get - copy:
+      summary: Get Tenant Info by Tenant ID
+      tags: []
+      responses:
+        '200':
+          description: User Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+              examples:
+                Get User Alice Smith:
+                  value:
+                    id: 142
+                    firstName: Alice
+                    lastName: Smith
+                    email: alice.smith@gmail.com
+                    dateOfBirth: '1997-10-31'
+                    emailVerified: true
+                    signUpDate: '2019-08-24'
+        '404':
+          description: User Not Found
+      operationId: get-users-userId
+      description: Retrieve the information of the Tenant with the matching Tenant ID.
+    put:
+      summary: Edit Tenant Info by Tenant ID
+      tags: []
+      responses: {}
+      operationId: put-tenant
+      x-stoplight:
+        id: nxq801egls6ti
+    delete:
+      summary: Delete Tenant Info by Tenant ID
+      tags: []
+      responses: {}
+      operationId: delete-tenant
+      x-stoplight:
+        id: k3zba990wai8c
+  /api/v1/tenant:
+    post:
+      summary: Create New Tenant
+      operationId: post-tenant
+      responses:
+        '200':
+          description: User Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+              examples:
+                New User Bob Fellow:
+                  value:
+                    id: 12
+                    firstName: Bob
+                    lastName: Fellow
+                    email: bob.fellow@gmail.com
+                    dateOfBirth: '1996-08-24'
+                    emailVerified: false
+                    createDate: '2020-11-18'
+        '400':
+          description: Missing Required Information
+        '409':
+          description: Email Already Taken
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                firstName:
+                  type: string
+                lastName:
+                  type: string
+                email:
+                  type: string
+                dateOfBirth:
+                  type: string
+                  format: date
+              required:
+                - firstName
+                - lastName
+                - email
+                - dateOfBirth
+            examples:
+              Create User Bob Fellow:
+                value:
+                  firstName: Bob
+                  lastName: Fellow
+                  email: bob.fellow@gmail.com
+                  dateOfBirth: '1996-08-24'
+        description: Post the necessary fields for the API to create a new user.
+      description: Create a new Tenant.
+      x-stoplight:
+        id: by708dmrp7s5m
+    parameters: []
+    get:
+      summary: Get all Tenants list
+      tags: []
+      responses: {}
+      operationId: get-tenants
+      x-stoplight:
+        id: dg8mheyu4mv43
+      description: 'Get all Tenants '
+  '/api/v1/tenant/{tenantId}/resources':
+    parameters:
+      - schema:
+          type: string
+        name: tenantId
+        in: path
+        required: true
+    get:
+      summary: Get all Tenant Resources list by Tenant ID
+      tags:
+        - Get all Tenant Resources list
+      responses: {}
+      operationId: get-tenant-tenantId-resources
+      x-stoplight:
+        id: ohg8i7iv1gzir
+      description: Get all Tenant Resources list
+    get - copy 6:
+      summary: Get all Tenant Resources list
+      tags:
+        - Get all Tenant Resources list
+      responses: {}
+      operationId: get-tenants-tenantId-resources
+    get - copy 5:
+      summary: Get all Tenant Resources list
+      tags:
+        - Get all Tenant Resources list
+      responses: {}
+      operationId: get-tenants-tenantId-resources
+    get - copy 4:
+      summary: Get all Tenant Resources list
+      tags:
+        - Get all Tenant Resources list
+      responses: {}
+      operationId: get-tenants-tenantId-resources
+    get - copy 3:
+      summary: Get all Tenant Resources list
+      tags:
+        - Get all Tenant Resources list
+      responses: {}
+      operationId: get-tenants-tenantId-resources
+    get - copy 2:
+      summary: Get all Tenant Resources list
+      tags:
+        - Get all Tenant Resources list
+      responses: {}
+      operationId: get-tenants-tenantId-resources
+    get - copy:
+      summary: Get all Tenant Resources list
+      tags:
+        - Get all Tenant Resources list
+      responses: {}
+      operationId: get-tenants-tenantId-resources
+  '/api/v1/tenant/{tenantId}/deployments':
+    parameters:
+      - schema:
+          type: string
+        name: tenantId
+        in: path
+        required: true
+    get:
+      summary: Get all Tenant Deployment list by Tenant ID
+      tags:
+        - Get all Tenant Deployment list
+      responses: {}
+      operationId: get-tenant-tenantId-deployments
+      x-stoplight:
+        id: 24kivli2iczvq
+    post:
+      summary: Create New Tenant Deployment by Tenant ID
+      tags: []
+      responses: {}
+      operationId: post-tenant-tenantId-deployments
+      x-stoplight:
+        id: d731wzaemmtwo
+      description: 'Create New Tenant Deployment '
+  '/api/v1/tenant/{tenantId}/patches':
+    parameters:
+      - schema:
+          type: string
+        name: tenantId
+        in: path
+        required: true
+    get:
+      summary: Get all Tenant Patches list by Tenant ID
+      tags:
+        - Get all Tenant Patches list
+      responses: {}
+      operationId: get-tenant-tenantId-patches
+      x-stoplight:
+        id: 2oklhn5boqge0
+    post:
+      summary: Create New Tenant Patch by Tenant ID
+      tags: []
+      responses: {}
+      operationId: post-tenant-tenantId-patches
+      x-stoplight:
+        id: 6jlmpukcbv76y
+  '/api/v1/tenant/{tenantId}/users':
+    parameters:
+      - schema:
+          type: string
+        name: tenantId
+        in: path
+        required: true
+    get:
+      summary: Get all Tenant User list  by Tenant ID
+      tags:
+        - Get all Tenant User list
+      responses: {}
+      operationId: get-tenant-tenantId-users
+      x-stoplight:
+        id: 6jfhqr1tm6s2u
+    post:
+      summary: Create New Tenant User  by Tenant ID
+      tags:
+        - Create New Tenant User
+      responses: {}
+      operationId: post-tenant-tenantId-users
+      x-stoplight:
+        id: y2q35z4k6066a
+  '/api/v1/tenant/{tenantId}/users/{userId}':
+    parameters:
+      - schema:
+          type: string
+        name: tenantId
+        in: path
+        required: true
+      - schema:
+          type: string
+        name: userId
+        in: path
+        required: true
+    put:
+      summary: Edit Tenant User  by Tenant ID and User ID
+      tags:
+        - Edit Tenant User
+      responses: {}
+      operationId: put-tenant-tenantId-users-userId
+      x-stoplight:
+        id: lnzvgzi2ul4xw
+    delete:
+      summary: Delete Tenant User by Tenant ID and User ID
+      tags: []
+      responses: {}
+      operationId: delete-tenant-tenantId-users-userId
+      x-stoplight:
+        id: ns26jvwa008ey
+components:
+  schemas:
+    Tenant:
+      title: Tenant
+      type: object
+      description: ''
+      examples:
+        - id: 142
+          firstName: Alice
+          lastName: Smith
+          email: alice.smith@gmail.com
+          dateOfBirth: '1997-10-31'
+          emailVerified: true
+          signUpDate: '2019-08-24'
+      properties:
+        id:
+          type: integer
+          description: Unique identifier for the given user.
+          x-stoplight:
+            id: 5ki1hrj5zp326
+        firstName:
+          type: string
+          x-stoplight:
+            id: qn8qfnidm95mj
+        lastName:
+          type: string
+          x-stoplight:
+            id: mx6vg62lfr6rs
+        email:
+          type: string
+          format: email
+          x-stoplight:
+            id: 5vzeuw1rzsnvy
+        dateOfBirth:
+          type: string
+          format: date
+          example: '1997-10-31'
+          x-stoplight:
+            id: 602xitx3oiagt
+        emailVerified:
+          type: boolean
+          description: Set to true if the user's email has been verified.
+          x-stoplight:
+            id: mhvhppyh1cr5j
+        createDate:
+          type: string
+          format: date
+          description: The date that the user was created.
+          x-stoplight:
+            id: 2fe0fele5fbt6
+      required:
+        - id
+        - firstName
+        - lastName
+        - email
+        - emailVerified
+      x-stoplight:
+        id: p2rringi7tczr
